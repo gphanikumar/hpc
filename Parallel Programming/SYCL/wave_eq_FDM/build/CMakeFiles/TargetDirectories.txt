@@ -1,0 +1,4 @@
+/media/arunc/data/Programming/Parallel-programming/OneAPI-Examples/Examples/ISO2d_FD/build/CMakeFiles/iso2dfd.dir
+/media/arunc/data/Programming/Parallel-programming/OneAPI-Examples/Examples/ISO2d_FD/build/CMakeFiles/run.dir
+/media/arunc/data/Programming/Parallel-programming/OneAPI-Examples/Examples/ISO2d_FD/build/CMakeFiles/edit_cache.dir
+/media/arunc/data/Programming/Parallel-programming/OneAPI-Examples/Examples/ISO2d_FD/build/CMakeFiles/rebuild_cache.dir
