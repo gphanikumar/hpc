@@ -15,6 +15,8 @@ The Message Passing Interface (MPI) is a standard that defines how processes on 
 - [Matrix multiplication - serial](#matrix-multiplication---serial)
 - [Matrix multiplication - parallel (Row based decomposition)](#matrix-multiplication---parallel-row-based-decomposition)
 - [Derived Data Type](#derived-data-type)
+-
+- [Kobayshi serial](#solidification-model-ryo-kobayshi-1993)
 
 ---
 
@@ -141,6 +143,16 @@ Demonstrates the use of custom MPI derived data types to communicate complex dat
 
 **Use case:**  
 Sending and receiving user-defined structures (e.g., structs in C/C++) in a single MPI call.
+
+---
+
+## Solidification model (Ryo Kobayshi, 1993)
+
+[solidification_serial.cpp](../Parallel%20Programming/OpenMPI/Kobayashi/solidification_serial.cpp)
+
+[solidification_parallel.cpp](../Parallel%20Programming/OpenMPI/Kobayashi/solidification_parallel.cpp)
+
+Demonstrates the solidification of pure alloy
 
 ---
 

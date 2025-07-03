@@ -130,64 +130,6 @@ int main(int argc, char** argv) {
   saveAsVTK(&PHASE_ARRAY0[0][0], MESH_Y, MESH_X, phase_out_filename);
   std::cout << "Output files saved in current directory.\n";
   /*
-  // write the PHASE_ARRAY0 and TEMP_ARRAY0 to files in to .vtk format for visualization using Paraview or similar tools
-  std::string phase_out_filename = "phase_serial.vtk";
-  std::ofstream vtkFile(phase_out_filename);
-    if (!vtkFile.is_open()) {
-        std::cerr << "Error: Could not open file " << phase_out_filename << " for writing.\n";
-        return 0;
-    }
-
-    // Write VTK file header
-    vtkFile << "# vtk DataFile Version 3.0\n";
-    vtkFile << "2D simulation data\n";
-    vtkFile << "ASCII\n";
-    vtkFile << "DATASET STRUCTURED_POINTS\n";
-    vtkFile << "DIMENSIONS " << MESH_X << " " << MESH_Y << " 1\n";
-    vtkFile << "ORIGIN 0 0 0\n";
-    vtkFile << "SPACING 1 1 1\n";
-    vtkFile << "POINT_DATA " << (MESH_X) * (MESH_Y) << "\n";
-    vtkFile << "SCALARS phase_data float 1\n";
-    vtkFile << "LOOKUP_TABLE default\n";
-    // Write data
-    for (size_t i = 0; i < MESH_X; ++i) {
-        for (size_t j = 0; j < MESH_Y; ++j) {
-            vtkFile << PHASE_ARRAY0[j][i] << " ";
-        }
-        vtkFile << "\n";
-    }
-    vtkFile.close();
-  std::cout << "VTK file saved as " << phase_out_filename << "\n";
-
-  std::string temp_out_filename = "temp_serial.vtk";
-  std::ofstream vtkFileTemp(temp_out_filename);
-    if (!vtkFileTemp.is_open()) {
-        std::cerr << "Error: Could not open file " << temp_out_filename << " for writing.\n";
-        return 0;
-    }
-
-    // Write VTK file header
-    vtkFileTemp << "# vtk DataFile Version 3.0\n";
-    vtkFileTemp << "2D simulation data\n";
-    vtkFileTemp << "ASCII\n";
-    vtkFileTemp << "DATASET STRUCTURED_POINTS\n";
-    vtkFileTemp << "DIMENSIONS " << MESH_X << " " << MESH_Y<< " 1\n";
-    vtkFileTemp << "ORIGIN 0 0 0\n";
-    vtkFileTemp << "SPACING 1 1 1\n";
-    vtkFileTemp << "POINT_DATA " << (MESH_X) * (MESH_Y) << "\n";
-    vtkFileTemp << "SCALARS temp_data float 1\n";
-    vtkFileTemp << "LOOKUP_TABLE default\n";
-    // Write data
-    for (size_t i = 0; i < MESH_X; ++i) {
-        for (size_t j = 0; j < MESH_Y; ++j) {
-            vtkFileTemp << TEMP_ARRAY0[j][i] << " ";
-        }
-        vtkFileTemp << "\n";
-    }
-    vtkFileTemp.close();
-  std::cout << "VTK file saved as " << temp_out_filename << "\n"; */
-
-
 
   /********
      CLEAN UP THE DYNAMICALLY ALLOCATED MEMORY.

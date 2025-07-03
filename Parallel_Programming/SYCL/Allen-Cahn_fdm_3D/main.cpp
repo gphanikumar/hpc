@@ -6,16 +6,22 @@
 
 #include <sycl/sycl.hpp>
 
-#include "heat.h"
+constexpr double DX = 1.0;
+constexpr double DY = 1.0;
+constexpr double DZ = 1.0;
+constexpr double R = 10.0;
+
+#include "Phase_field.h"
 #include "utilities.h"
 #include "setup.h"
 #include "io.h"
 #include "solve.h"
 
+
 int main(int argc, char* argv[]){
     
     // outsaving intervel
-    int time_intervel = 500;
+    int time_intervel = 200;
 
     int numTimesteps;
 
@@ -24,19 +30,17 @@ int main(int argc, char* argv[]){
 
     saveAsVTK(&current, 0, "Output_0.vtk");
 
-    // Diffusiom constant
-    double a = 0.5;
-
-    double dx2 = current.dx * current.dx;
-    double dy2 = current.dy * current.dy;
-
-    // calculate the highest stable timestep
-    double dt = dx2 * dy2 / (2.0 * a * (dx2 + dy2));
+    // Phase field parameters
+    double M = 1.0; //Mobiliry
+    double K = 1.0; //Gradient energy coefficienet
+    double W = 1.0; //double well height
+    
+    double dt = 0.01;
 
     using wall_clock_t = std::chrono::high_resolution_clock;
 
     // device selector queue
-    sycl::queue q{sycl::cpu_selector_v};
+    sycl::queue q{sycl::gpu_selector_v};
 
     std::cout<<"Selected device : "<<q.get_device().get_info<sycl::info::device::name>()<<"\n";
 
@@ -44,9 +48,11 @@ int main(int argc, char* argv[]){
 
     for(int i=0; i<numTimesteps; ++i){
         if(i%2 == 0){
-            solve(q, &current, &previous, a, dt);
+            solve(q, &current, &previous, W, K, M, dt);
+            Apply_boundary_conditions(&current);
         }else{
-            solve(q, &previous, &current, a, dt);
+            solve(q, &previous, &current, W, K, M, dt);
+            Apply_boundary_conditions(&previous);
         }
 
         if(i%time_intervel == 0){
