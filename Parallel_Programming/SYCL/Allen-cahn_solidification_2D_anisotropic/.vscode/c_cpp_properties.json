@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/arunc/intel/oneapi/compiler/2024.2/include",
+                "/home/arunc/intel/oneapi/compiler/2024.2/include/sycl",
+                "/home/arunc/intel/oneapi/2024.2/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
