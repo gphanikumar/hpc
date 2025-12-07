@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/hdf5/serial",
+                "/home/arunc/intel/oneapi/2024.2/include",
+                "/home/arunc/intel/oneapi/2024.2/include/sycl",
+                "${workspaceFolder}/Parallel_Programming/SYCL/Kobayshi_model/include"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}

@@ -39,7 +39,7 @@ int main(int argc, char* argv[]){
     using wall_clock_t = std::chrono::high_resolution_clock;
 
     // device selector queue
-    sycl::queue q{sycl::gpu_selector_v};
+    sycl::queue q{sycl::cpu_selector_v};
 
     std::cout<<"Selected device : "<<q.get_device().get_info<sycl::info::device::name>()<<"\n";
 

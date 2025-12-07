@@ -21,14 +21,14 @@ constexpr double R = 10.0;
 int main(int argc, char* argv[]){
     
     // outsaving intervel
-    int time_intervel = 200;
+    int time_intervel = 1000;
 
     int numTimesteps;
 
     field current, previous;
     initialize(argc, argv, &current, &previous, &numTimesteps);
 
-    saveAsVTK(&current, 0, "Output_0.vtk");
+    //saveAsVTK(&current, 0, "Output_0.vtk");
 
     // Phase field parameters
     double M = 1.0; //Mobiliry
@@ -40,7 +40,7 @@ int main(int argc, char* argv[]){
     using wall_clock_t = std::chrono::high_resolution_clock;
 
     // device selector queue
-    sycl::queue q{sycl::gpu_selector_v};
+    sycl::queue q{sycl::cpu_selector_v};
 
     std::cout<<"Selected device : "<<q.get_device().get_info<sycl::info::device::name>()<<"\n";
 
@@ -55,9 +55,9 @@ int main(int argc, char* argv[]){
             Apply_boundary_conditions(&previous);
         }
 
-        if(i%time_intervel == 0){
-            saveAsVTK(&current, 0, "Output_"+std::to_string(i)+".vtk");
-        }
+        //if(i%time_intervel == 0){
+        //    saveAsVTK(&current, 0, "Output_"+std::to_string(i)+".vtk");
+        //}
     }
     
     auto stop = wall_clock_t::now();
