@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/src/**",
+                "/home/arunc/intel/oneapi/compiler/2024.2/include/**",
+                "/home/arunc/intel/oneapi/2024.2/include/**",
+                "/home/arunc/intel/oneapi/2024.2/include",
+                "/home/arunc/intel/oneapi/2024.2/include/sycl",
+                "/home/arunc/hdf5-parallel/include"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "intelliSenseMode": "linux-clang-x64",
+            "cppStandard": "c++20"
+        }
+    ],
+    "version": 4
+}
