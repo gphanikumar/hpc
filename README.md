@@ -4,3 +4,6 @@ A tutorial to introduce high performance computing to beginner level students. I
 # Parallel Programming
  * [OpenMPI](topics/OpenMPI.md) OpenMPI is a standard library for performing parallel processing using a distributed memory model.
 * [DPC++ Sycl](topics/Sycl.md) SYCL is an open standard for heterogeneous programming in C++
+
+# Slides
+ * [Slides from Research Scholars Day 2025](slides/rsd2025.pdf) held on 13-Dec-2025
